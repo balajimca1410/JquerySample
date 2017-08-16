@@ -1,0 +1,58 @@
+{{#ifCondForRSC scopeDeliverableId}} 
+<div id="commentAddbtn" title="Add Commment" class="cmtAddNewBtn"><span class="hp-add-plus-comment"></span> Add New Comment</div>
+<div style="{{#if inputFlag}}display:block{{else}}display:none{{/if}}" class="firstRowDynamic" id="firstrow">
+   <textarea rows="2" cols="80" class="addNewCommentClass" id="commentsid"></textarea>
+   </td>
+   <!--<input type="text" onkeyup="this.value = minmax(this.value, 0, 10)" name="pgtCmtScore" class="addNewScoreClass" style="width: 50px;" />-->
+   <br />
+   <input type="button" class="cmtAddNewBtn save_projectscorecomment" disabled="" value="Save" id="save_projectscorecomment">
+   <input type="button" class="cmtAddNewBtn hideAddCmtSec" value="Cancel">
+</div>
+{{/ifCondForRSC}}
+{{#if comments.length}}
+<div class="commentTableNewDiv">
+   <table class="table table-striped commenttable commentTableNew" id="commentTableIn" data-scope="{{scopeDeliverableId}}" data-pcode="{{projectCode}}">
+      <thead class="no-border">
+         <tr>
+            <th class="hp-width-5-percentage" style="min-width :85px;">Date</th>
+            <th class="hp-width-50-percentage">Comment</th>
+            <th class="hp-width-5-percentage">Score</th>
+            {{#ifCondForRSC scopeDeliverableId}} 
+            <th class="hp-width-5-percentage hp-text-align-center">Action</th>
+            {{/ifCondForRSC}} 
+         </tr>
+      </thead>
+      <tbody class="no-border-x">
+         {{#each comments}}
+         <tr>
+            <td rowspan="{{rowSpan}}">{{date}}</td>
+            {{#each comments}}
+	         <tr class="{{#if is_editable}}canEdit{{else}}viewOnly{{/if}}">
+	            <td>
+	               <div class="hideOnEdit">
+	                  <span class="cheatCmt">{{{parseHTML comments}}}</span>
+	                  <div class="cusReviewer">-{{Reviewer}}</div>
+                     <div class="hp-edit-comment-date">{{#if Modified_date}}Edited on {{Modified_date}} {{/if}}</div>
+	               </div>
+	               <div class="showOnEdit" style="display: none;">
+	                  <textarea cols="80" class="scoreComments" id="commentsid">{{{parseHTMLScoreCard comments}}}</textarea><br />
+	                  <input type="button" cusValue="{{id}}" class="cmtAddNewBtn save_projectscorecomment_edit" disabled="" id="save_projectscorecomment_edit" value="Save">
+	                  <input type="button" class="cmtAddNewBtn closeEditCmtSec" value="Cancel">
+	               </div>
+	            </td>
+	            <td contenteditable="false">{{display_Project_Score project_score}}</td>
+	            {{#ifCondForRSC ../../scopeDeliverableId}}
+	            <td>
+	               <img height="16" class="addPrevClass {{#if is_editable}}editCusCmts editCusCmtsSam{{/if}} notAllowed" id="commentEditbtn-68" src="../../images/edit.png">
+	               <img height="16" value="{{id}}" class="notAllowed {{#if is_editable}}deleteImg{{/if}}" src="../../images/trash_icon.png">
+	            </td>
+	            {{/ifCondForRSC}}
+	         </tr>
+         {{/each}}
+         </tr>
+         {{/each}}
+      </tbody>
+   </table>
+</div>
+{{/if}}
+<span id="cusLocalValue" style="display:none"> </span>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta name="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="script25.js"></script>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+ul.child {
+    display: none;
+}
+ul.parent > li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+    background: #747474;
+    color: white;
+    cursor: pointer;
+    border-right: 1px solid #959595;
+}
+
+
+</style>
+</head>
+<body>
+        <nav id="navigation">
+            <ul class="parent">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                    <ul class="child">
+                        <li>Item 2.1</li>
+                        <li>Item 2.2</li>
+                        <li>Item 2.3</li>
+                        <li>Item 2.4</li>
+                    </ul>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+                <ul class="child">
+                    <li>Item 5.1</li>
+                    <li>Item 5.2</li>
+                    <li>Item 5.3</li>
+                    <li>Item 5.4</li>
+                </ul>
+            </ul>
+
+            
+        </nav>
+
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Newsticker</title>
+<meta name="UTF-8">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="script23.js"></script>
+<style>
+    #myNewsticker .newsTicker{
+        display: none;
+    }
+    #myNewsticker .newsTicker.active{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="myNewsticker">
+        <div class="newsTicker active">This is my sentence 1.</div>
+        <div class="newsTicker">This is my sentence 2.</div>
+        <div class="newsTicker">This is my sentence 3.</div>
+        <div class="newsTicker">This is my sentence 4.</div>
+        <div class="newsTicker">This is my sentence 5.</div>
+        <div class="newsTicker">This is my sentence 6.</div>
+        <div class="newsTicker">This is my sentence 7.</div>
+    </div><br><br>
+    <span id="next">Next</span> ||
+    <span id="prev">Previous</span>
+
+
+
+</body>
+</html>

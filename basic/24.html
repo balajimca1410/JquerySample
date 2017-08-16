@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Newsticker- part 2</title>
+<meta name="UTF-8">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="script24.js"></script>
+<style>
+    #myNewsticker .newsTicker{
+        display: none;
+    }
+    #myNewsticker .newsTicker.active{
+        display: block;
+    }
+    div#myNewsticker {
+    padding: 10px;
+    background: #eee;
+    color: #e85005;
+    font-weight: bold;
+    font-family: calibri;
+    display: inline-block;
+}
+span#next, span#prev {
+    cursor: pointer;
+    padding: 5px;
+    background: red;
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <div id="myNewsticker">
+        <div class="newsTicker active">This is my sentence 1.</div>
+        <div class="newsTicker">This is my sentence 2.</div>
+        <div class="newsTicker">This is my sentence 3.</div>
+        <div class="newsTicker">This is my sentence 4.</div>
+        <div class="newsTicker">This is my sentence 5.</div>
+        <div class="newsTicker">This is my sentence 6.</div>
+        <div class="newsTicker">This is my sentence 7.</div>
+    </div><br><br>
+    <span id="next">&#171;</span>
+    <span id="prev">&#187;</span>
+
+
+
+</body>
+</html>
